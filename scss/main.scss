@@ -1,0 +1,339 @@
+@import "fonts"; // импортируем sccs с icomoon стилями в наш проект
+
+body {
+    font-family: 'Oswald', sans-serif;
+}
+
+@mixin reset_ul {
+    //миксина для обнуления дефолтных св-в списков
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.header-wrapper{
+	background: #122a2f;
+	padding: 21px 20px;
+}
+.navigation {
+    justify-content: flex-end;
+
+    .logo {
+        background: url(../../images/logo.png) no-repeat;
+        width: 105px;
+        height: 59px;
+        display: block;
+        text-indent: -9999px;
+        position: absolute;
+        top: 20px;
+
+        @media (max-width: 991.98px) {
+            left: 20px;
+
+        }
+    }
+
+    ul {
+        li {
+
+            a {
+                color: #fff;
+
+                &:hover,
+                &.active {
+                    color: #ffe600;
+
+                    &::after {
+                        content: '';
+                        width: 5px;
+                        height: 5px;
+                        background: #ffe600;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.navbar-nav ul {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    li {
+        padding-left: 52px;
+        position: relative;
+
+    }
+}
+
+.navbar-light .navbar-nav {
+    position: relative;
+}
+
+.navbar-light .navbar-nav li {
+    &:before {
+        content: '';
+        width: 5px;
+        height: 5px;
+        position: absolute;
+        background: #ffe600;
+        top: calc(50% - 3px);
+        left: 23px;
+    }
+
+    &:first-child:before {
+        display: none;
+    }
+}
+
+
+.bg-light {
+    background-color: #122a2f !important;
+}
+
+.main-wrapper {
+    height: calc(100vh - 100px);
+    background: #11343a;
+    min-height: 500px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+
+    .text-wrapper {
+        background: #122a2f;
+        height: 370px;
+        padding-top: 50px;
+        text-align: center;
+
+        .article {
+            h1 {
+                font-weight: bold;
+                color: #fff;
+                font-size: 65px;
+            }
+        }
+
+        .btn-primary {
+            font-weight: bold;
+            background-color: #ffe600;
+            color: #000;
+            border-color: none;
+        }
+    }
+}
+
+.button {
+    width: 60px;
+    height: 60px;
+    background: #ffe600;
+    position: absolute;
+    bottom: 0;
+    left: calc(50% - 26px);
+
+    &:before {
+        content: '';
+        background: url(../../images/arrows.svg);
+        position: absolute;
+        width: 20px;
+        height: 19px;
+        top: calc(50% - 9px);
+        left: calc(50% - 10px);
+    }
+}
+
+.btn-primary {}
+
+.services-block {
+    padding: 61px 0;
+
+    .services-block-article {
+
+        .services {
+            text-align: center;
+
+            span {
+                font-size: 16px;
+            }
+
+            h2 {
+                font-weight: bold;
+                font-size: 30px;
+                padding-bottom: 32px;
+                padding-top: 10px;
+
+                &:after {
+                    content: '';
+                    background: #ffe600;
+                    height: 3px;
+                    width: 170px;
+                    position: absolute;
+                    top: 90px;
+                    left: calc(50% - 85px);
+                }
+            }
+        }
+    }
+}
+
+.features {
+    text-align: center;
+
+    .feature {
+        padding: 0 10px;
+        a{
+        	text-decoration: none;
+        	h3{
+        		color: #131316;
+        	}
+        	p{
+        		color: #707070;
+        	}
+        	&:hover{
+        		*{
+        		color: #ffe600;
+        		text-decoration: none;
+        	    }
+        	}
+        }
+        .logo-section {
+            display: inline-block;
+            position: relative;
+            width: 108px;
+            height: 108px;
+            border-radius: 50%;
+            background: #ffe600;
+            margin-bottom: 25px;
+            margin-top: 62px;
+
+            &:hover {
+                border: 1px solid #131316;
+                background: #fff;
+
+                em:before {
+                    color: #ffe600;
+                }
+
+            }
+
+        }
+
+        .icon-ico-web-design:before {
+            content: "\e904";
+            font-size: 40px;
+            position: absolute;
+            top: calc(50% - 19px);
+            left: calc(50% - 19px);
+        }
+
+        .icon-ico-graphic-design:before {
+            content: "\e902";
+            font-size: 40px;
+            position: absolute;
+            top: calc(50% - 19px);
+            left: calc(50% - 19px);
+        }
+
+        .icon-ico-photo:before {
+            content: "\e903";
+            font-size: 40px;
+            position: absolute;
+            top: calc(50% - 19px);
+            left: calc(50% - 23px);
+        }
+
+        .icon-ico-developing:before {
+            content: "\e901";
+            font-size: 40px;
+            position: absolute;
+            top: calc(50% - 19px);
+            left: calc(50% - 20px);
+        }
+
+        h3 {
+            font-weight: bold;
+        }
+
+        p {}
+    }
+}
+
+.navbar {
+    @media (max-width: 991.98px) {
+       width: 100%;
+    }
+}
+
+.navbar-toggler{
+	background: #fff;
+}
+
+.logo{
+	background: url(../../images/logo.png) no-repeat;
+	width: 105px;
+	height: 59px;
+	display: block;
+	text-indent: -9999px;
+}
+
+.main-nav{
+	@include reset_ul; //применяем миксину для обнуления 
+	//свойств списка по умолчанию
+	width: 100%;
+	li{
+		padding-left: 30px;
+		padding-right: 23px;
+		position: relative;
+		font-weight: 700;
+		font-size: 14px;
+		a{
+			display: block;
+			color: #fff;
+			&:hover{
+				color: #ffe600;
+				text-decoration: none;
+			}
+		}
+		&.active a{
+			color: #ffe600;
+		}
+		&:not(:first-child):before{ //для всех li, кроме первой ставим желтый квадратик слева
+			position: absolute;
+			left: 0;
+			top: 10px;
+			background: #ffe600;
+			width: 5px;
+			height: 5px;
+			content:'';
+		}
+	}
+	@media (max-width: 991.98px) { //медиа-запрос в бутстрапе для 
+		//планшетов выглядит так: @media (max-width: 991.98px). Это тоже взято 
+		//с сайта бутстрап. 
+		ul{
+			padding-top: 30px;
+		}
+  	li{
+  		padding-bottom: 20px;
+  		padding-left: 20px;
+  		a{
+  			font-size: 30px;
+  			text-align: center;
+  		}
+  		&:before{
+				display: none;
+  		}
+  	}
+	}
+}
+.navbar-toggler-icon{
+	width: 1em;
+	height: 1.1em;
+}
+.navbar-toggler:focus{
+	outline: none;
+}
